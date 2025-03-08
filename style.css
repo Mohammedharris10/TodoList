@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+}
+h1{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    padding: 30px;
+    border-radius: 10px;
+}
+.input-container{
+    flex-grow: 1;
+    display: flex;
+}
+.input-container>input {
+    flex-grow: 1;
+    max-width: 18rem;
+    padding: 10px 20px;
+    border-radius: 50px 0 50px 50px;
+}
+
+.input-container > button{
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-left: -30px;
+}
+.task-bar{
+    display: flex;
+    /* background-color: red; */
+    flex-direction: column;
+    margin-top: 18px;
+    gap: 10px;
+}
+
+.task{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-width: 24rem;
+    max-height: 12rem;
+    overflow-y: auto;
+    border-radius: 5px;
+}
+/* 
+.task:hover{
+    
+} */
+
+.task > p{
+    margin-left: 10px;
+}
+
+.task > input{
+    display: flex;
+    align-items: center;
+}
