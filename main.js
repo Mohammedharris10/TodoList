@@ -14,9 +14,30 @@ function addTaskScreen() {
         taskPara.textContent = taskText;
         taskMsg.className = "task";
 
-        taskMsg.append(radioInput, taskPara);
+
+        
+        const deleteButton = document.createElement('i');
+        // deleteButton.textContent = "X";
+        deleteButton.classList.add("delete-btn", "bi", "bi-x-lg");
+
+        taskMsg.append(radioInput, taskPara, deleteButton);
         taskInput.value = '';
         taskBar.appendChild(taskMsg);
+
+        function finishTask(event) {
+            if (radioInput.checked) {
+                taskPara.style.textDecoration = 'line-through';
+            } else {
+                taskPara.style.textDecoration = 'none';
+            }
+        }
+
+        radioInput.addEventListener("click", finishTask);
+            
+
+            deleteButton.addEventListener("click",function (event){
+                    event.currentTarget.parentNode.remove();
+            });
     }
 
     else {
@@ -36,9 +57,33 @@ function addTaskKey(event) {
             taskPara.textContent = taskText;
             taskMsg.className = "task";
 
-            taskMsg.append(radioInput, taskPara);
+            const deleteButton = document.createElement('i');
+            deleteButton.classList.add("delete-btn", "bi", "bi-x-lg");
+
+
+            taskMsg.append(radioInput, taskPara,deleteButton);
             taskInput.value = '';
             taskBar.appendChild(taskMsg);
+
+            function finishTask(event) {
+                if (radioInput.checked) {
+                    taskPara.style.textDecoration = 'line-through';
+                } else {
+                    
+                    taskPara.style.textDecoration = 'none'; 
+                    // My learning: Mostly avoid to use htmlinner for style like this taskPara.innerHTML = `<del>${taskPara.innerHTML}</del>
+                }
+            }
+
+            radioInput.addEventListener("click", finishTask);
+            // console.log(String(taskText)); 
+            console.log(taskMsg);
+            
+
+            deleteButton.addEventListener("click",function (event){
+                    event.currentTarget.parentNode.remove();
+            });
+        
         }
 
         else {
@@ -46,6 +91,7 @@ function addTaskKey(event) {
         }
     }
 }
+
 
 addButton.addEventListener('click', addTaskScreen);
 document.addEventListener("keydown", addTaskKey);

@@ -26,6 +26,7 @@ h1{
     flex-direction: column;
     background-color: whitesmoke;
     padding: 30px;
+    width: 34rem;
     border-radius: 10px;
 }
 .input-container{
@@ -34,7 +35,7 @@ h1{
 }
 .input-container>input {
     flex-grow: 1;
-    max-width: 18rem;
+    max-width: 26rem;
     padding: 10px 20px;
     border-radius: 50px 0 50px 50px;
 }
@@ -55,11 +56,16 @@ h1{
 .task{
     display: flex;
     flex-direction: row;
+    /* background-color: antiquewhite; */
     gap: 10px;
-    max-width: 24rem;
+    justify-content: space-between;
+    max-width: 33rem;
     max-height: 12rem;
     overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid black;
     border-radius: 5px;
+    padding: 4px;
 }
 /* 
 .task:hover{
@@ -73,4 +79,19 @@ h1{
 .task > input{
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 0;
 }
+
+.delete-btn{
+    cursor: pointer;
+    /* background-color: red; */
+    align-self: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    padding: 2px;
+    position: sticky;
+    top: 0;
+}
+
